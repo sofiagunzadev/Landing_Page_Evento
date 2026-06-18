@@ -1,6 +1,6 @@
 # Visão Geral do Projeto
 
-O NEXORA Summit é uma landing page fictícia criada para representar um grande evento de inovação e negócios em Angola-Luanda.
+O NEXORA Expo é uma landing page fictícia criada para representar um grande evento de inovação e negócios em Angola-Luanda.
 
 Este projeto foi desenvolvido com foco em:
 
@@ -35,7 +35,7 @@ Falta de foco em conversão
 Experiência de utilizador fraca em dispositivos móveis
 
 
-O NEXORA Summit Landing Page resolve isso ao centralizar toda a informação essencial num fluxo claro e persuasivo.
+O NEXORA Expo Landing Page resolve isso ao centralizar toda a informação essencial num fluxo claro e persuasivo.
 ---
 
 # Estrutura da Landing Page
