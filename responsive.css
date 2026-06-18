@@ -1,0 +1,453 @@
+/* ==========================================================================
+   FILDA 2026 — Responsive CSS
+   Abordagem: Mobile First
+   Breakpoints: 480px · 768px · 1024px · 1280px
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   BASE MOBILE (< 480px) — estilos base para smartphones pequenos
+   -------------------------------------------------------------------------- */
+
+:root {
+  --container-pad: 1.25rem;
+}
+
+/* Hero */
+.hero-content {
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.hero-visual {
+  display: none;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+}
+
+.hero-stats {
+  gap: 1.5rem;
+}
+
+.stat strong {
+  font-size: 1.5rem;
+}
+
+/* Header nav — oculto por padrão no mobile */
+#main-nav {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 22, 40, 0.98);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 99;
+}
+
+#main-nav.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+#main-nav ul {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#main-nav .nav-link {
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.05em;
+}
+
+#main-nav .nav-cta {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+#menu-toggle {
+  display: flex;
+}
+
+/* Sobre */
+.sobre-grid {
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+/* Benefícios */
+.beneficios-grid {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* Agenda */
+.agenda-timeline {
+  padding-left: 80px;
+}
+
+.agenda-timeline::before {
+  left: 56px;
+}
+
+.agenda-time {
+  left: -80px;
+  width: 50px;
+}
+
+.agenda-time span {
+  font-size: 0.75rem;
+}
+
+.agenda-dot {
+  left: -18px;
+}
+
+.agenda-tabs {
+  gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.agenda-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.agenda-tab {
+  flex-shrink: 0;
+  padding: 0.75rem 1rem;
+}
+
+/* Expositores */
+.expositores-grid {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.expositores-cta {
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.expositores-cta p {
+  font-size: 1rem;
+}
+
+/* Inscrição */
+.inscricao-inner {
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+/* Footer */
+.footer-grid {
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.footer-bottom {
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+/* Back to top */
+#back-to-top {
+  bottom: 1.25rem;
+  right: 1.25rem;
+}
+
+/* Sections padding */
+.sobre,
+.beneficios,
+.programacao,
+.expositores,
+.inscricao,
+.faq {
+  padding: 5rem 0;
+}
+
+/* --------------------------------------------------------------------------
+   TABLET PEQUENO (>= 480px)
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 480px) {
+  :root {
+    --container-pad: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero-visual {
+    display: flex;
+  }
+
+  .hero-card-stack {
+    width: 240px;
+    height: 290px;
+    transform: scale(0.85);
+  }
+
+  .beneficios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .expositores-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   TABLET (>= 768px)
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 768px) {
+  :root {
+    --container-pad: 2rem;
+  }
+
+  /* Header */
+  #menu-toggle {
+    display: none;
+  }
+
+  #main-nav {
+    position: static;
+    background: transparent;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #main-nav ul {
+    flex-direction: row;
+    gap: 0.25rem;
+  }
+
+  #main-nav .nav-link {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    color: rgba(255,255,255,0.75);
+  }
+
+  /* Hero */
+  .hero-content {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    padding-top: 4rem;
+    align-items: center;
+  }
+
+  .hero-visual {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .hero-card-stack {
+    width: 260px;
+    height: 320px;
+    transform: scale(0.9);
+    transform-origin: right center;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  /* Sobre */
+  .sobre-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  /* Agenda */
+  .agenda-timeline {
+    padding-left: 120px;
+  }
+
+  .agenda-timeline::before {
+    left: 96px;
+  }
+
+  .agenda-time {
+    left: -120px;
+    width: 80px;
+  }
+
+  .agenda-time span {
+    font-size: 0.875rem;
+  }
+
+  .agenda-dot {
+    left: -30px;
+  }
+
+  /* Expositores */
+  .expositores-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .expositores-cta {
+    flex-direction: row;
+    text-align: left;
+    padding: 2.5rem 3rem;
+  }
+
+  /* Inscrição */
+  .inscricao-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   DESKTOP (>= 1024px)
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 1024px) {
+  :root {
+    --container-pad: 2.5rem;
+  }
+
+  /* Hero */
+  .hero-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    padding-top: 5rem;
+  }
+
+  .hero-visual {
+    justify-content: center;
+  }
+
+  .hero-card-stack {
+    width: 300px;
+    height: 360px;
+    transform: scale(1);
+  }
+
+  /* Benefícios */
+  .beneficios-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Expositores */
+  .expositores-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+    gap: 4rem;
+  }
+
+  /* Sections padding */
+  .sobre,
+  .beneficios,
+  .programacao,
+  .expositores,
+  .inscricao,
+  .faq {
+    padding: 8rem 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   DESKTOP LARGE (>= 1280px)
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 1280px) {
+  :root {
+    --container-pad: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 4.5rem;
+  }
+
+  .hero-desc {
+    font-size: 1.125rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   FOCO E ACESSIBILIDADE
+   -------------------------------------------------------------------------- */
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Remove outline para navegação por mouse, mantém para teclado */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Garantir que inputs com foco sempre mostrem indicação clara */
+.form-group input:focus-visible {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.2);
+}
+
+/* Botões com foco de teclado */
+.btn:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   PRINT
+   -------------------------------------------------------------------------- */
+
+@media print {
+  #header,
+  #back-to-top,
+  #loading-screen,
+  .hero-visual,
+  .hero-scroll-hint,
+  .hero-actions,
+  .expositores-cta,
+  .inscricao,
+  .social-links {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
+  }
+
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+}
