@@ -9,6 +9,9 @@ Clareza de informação
 Design moderno e responsivo
 Experiência de utilizador fluida (UX/UI)
 
+##Link do projecto 
+https://landing-page-evento.netlify.app/
+
 ---
 # Objetivo
 
